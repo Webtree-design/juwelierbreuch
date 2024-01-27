@@ -1,4 +1,13 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Inject,
+  PLATFORM_ID,
+  ViewChild,
+} from '@angular/core';
+import { Router } from '@angular/router';
 import { NgImageSliderComponent } from 'ng-image-slider';
 
 @Component({
@@ -9,7 +18,10 @@ import { NgImageSliderComponent } from 'ng-image-slider';
 export class CaruselComponent {
   imageWidth: any = 1280 / 3; // carusel icons sind noch ein bug
   width: any;
-
+  private isBrowser: any;
+  constructor(public router: Router, @Inject(PLATFORM_ID) platformId: string) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
   @ViewChild('image') slider!: NgImageSliderComponent;
 
   @HostListener('window:resize', ['$event'])
@@ -34,62 +46,44 @@ export class CaruselComponent {
     }
   }
 
-  imageObject: Array<object> = [
+  imageObject: any = [
     {
-      image: '../../../../assets/webtree/Harley.png',
-      thumbImage: '../../../../assets/webtree/Harley.png',
-      alt: 'alt',
-      title: 'title',
-      src: 'www.webtree-design.de',
+      image: '../../../../assets/Harley.png',
+      thumbImage: '../../../../assets/Harley.png',
+      alt: 'Harley',
+      title: 'Harley',
+      src: 'www.demoone.webtreedesign.de',
     },
     {
-      image: '../../../../assets/webtree/Develope.jpg',
-      thumbImage: '../../../../assets/webtree/Develope.jpg',
-      alt: 'alt',
-      title: 'title',
-      src: 'www.webtree-design.de',
+      image: '../../../../assets/Juwelier.png',
+      thumbImage: '../../../../assets/Juwelier.png',
+      alt: 'Juwelier',
+      title: 'Juwelier',
+      src: 'www.juwelier-breuch.de',
     },
     {
-      image: '../../../../assets/webtree/skizze.jpg',
-      thumbImage: '../../../../assets/webtree/skizze.jpg',
-      alt: 'alt',
-      title: 'title',
-      src: 'www.webtree-design.de',
-    },
-    {
-      image: '../../../../assets/webtree/ready.jpg',
-      thumbImage: '../../../../assets/webtree/ready.jpg',
-      alt: 'alt',
-      title: 'title',
-      src: 'www.webtree-design.de',
-    },
-    {
-      image: '../../../../assets/webtree/logo.png',
-      thumbImage: '../../../../assets/webtree/logo.png',
-      alt: 'alt',
-      title: 'title',
-      src: 'www.webtree-design.de',
-    },
-    {
-      image: '../../../../assets/webtree/logo.png',
-      thumbImage: '../../../../assets/webtree/logo.png',
-      alt: 'alt',
-      title: 'title',
-      src: 'www.webtree-design.de',
+      image: '../../../../assets/Solar.png',
+      thumbImage: '../../../../assets/Solar.png',
+      alt: 'Solar',
+      title: 'Solar',
+      src: 'www.eb-energiekonzepte.de',
     },
   ];
 
   imageSliderClick(event: any) {
-    // console.log(event);
-    switch (event) {
-      case 0:
-        break;
-      case 1:
-        break;
-      case 2:
-        break;
-      case 3:
-        break;
+    console.log();
+    if (this.isBrowser) {
+      switch (event) {
+        case 0:
+          window.location.href = 'https://demoone.webtreedesign.de';
+          break;
+        case 1:
+          window.location.href = 'https://juwelier-breuch.de';
+          break;
+        case 2:
+          window.location.href = 'https://eb-energiekonzepte.de';
+          break;
+      }
     }
   }
 

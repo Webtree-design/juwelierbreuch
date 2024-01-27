@@ -24,8 +24,8 @@
 }
 
 div.anchor {
-  display: block;
-  position: relative;
-  top: -85px;
-  visibility: hidden;
+  display: block !important;
+  position: relative !important;
+  top: -85px !important;
+  visibility: hidden !important;
 }

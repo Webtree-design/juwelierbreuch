@@ -13,7 +13,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,7 +24,8 @@ export class AppComponent {
   firmenmail = 'mail.de';
   width: number = 0;
   public message: any = [];
-  private isBrowser: any;
+  public news: any = [];
+
   one: String = '';
   two: String = '';
   three: String = '';
@@ -34,16 +34,13 @@ export class AppComponent {
   fragment: any;
 
   constructor(
-    @Inject(PLATFORM_ID) platformId: string,
     public dataService: DataService,
     public dialog: Dialog,
     private router: Router,
     private elementRef: ElementRef,
     public snackBar: MatSnackBar,
     private route: ActivatedRoute
-  ) {
-    this.isBrowser = isPlatformBrowser(platformId);
-  }
+  ) {}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any) {
@@ -58,12 +55,14 @@ export class AppComponent {
   async ngOnInit() {
     await this.getMessage();
     this.message = [];
+    this.news = [];
   }
 
   openSnackBar(message: string, action: string) {
-    if (this.message[0].active != '1') return;
     this.snackBar.open(message, action);
   }
+
+ 
 
   public async getMessage() {
     this.dataService.getMessage().subscribe((res: any) => {

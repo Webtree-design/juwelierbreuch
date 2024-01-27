@@ -7,10 +7,11 @@
       font-weight: bold;
       transition: 0.1s;
       font-weight: 800;
+      color: var(--textcolor);
       transition: var(--shortTransition);
     }
     a:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
       transition: var(--shortTransition);
     }
   }
@@ -19,8 +20,6 @@
 .router-outlet {
   background-color: var(--background);
 }
-
-
 
 ::ng-deep .ngStyleAfter {
   background-color: var(--toolbar);
