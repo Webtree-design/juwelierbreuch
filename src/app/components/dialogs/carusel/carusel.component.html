@@ -1,8 +1,8 @@
-<div class="mx-auto max-w-screen-xl">
+<!-- <div #section class="mx-auto max-w-screen-xl">
   <ng-image-slider
-    [autoSlide]="{ interval: 2, stopOnHover: true }"
-    [animationSpeed]="2"
-    [imageSize]="{ width: imageWidth, height: 500, space: 0 }"
+    [autoSlide]="{ interval: 0, stopOnHover: true }"
+    [animationSpeed]="0"
+    [imageSize]="{ width: 320, height: 500, space: 0 }"
     [imagePopup]="false"
     [images]="imageObject"
     #image
@@ -31,5 +31,42 @@
         <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
       </svg>
     </button>
+  </div>
+</div> -->
+
+<div class="mx-auto max-w-screen-xl">
+  <div class="grid gap-6 md:grid-cols-3">
+    <div
+      class="zoom relative overflow-hidden rounded-md bg-cover bg-no-repeat shadow-md dark:shadow-black/20 bg-[50%]"
+      data-te-ripple-init
+      data-te-ripple-color="dark"
+    >
+      <img
+        src="../../../../assets/Juwelier.png"
+        class="w-full align-middle transition duration-300 ease-linear"
+      />
+    </div>
+
+    <div
+      class="zoom relative overflow-hidden rounded-md bg-cover bg-no-repeat shadow-md dark:shadow-black/20 bg-[50%]"
+      data-te-ripple-init
+      data-te-ripple-color="dark"
+    >
+      <img
+        src="../../../../assets/Harley.png"
+        class="w-full align-middle transition duration-300 ease-linear"
+      />
+    </div>
+
+    <div
+      class="zoom relative overflow-hidden rounded-md bg-cover bg-no-repeat shadow-md dark:shadow-black/20 bg-[50%]"
+      data-te-ripple-init
+      data-te-ripple-color="dark"
+    >
+      <img
+        src="../../../../assets/Solar.png"
+        class="w-full align-middle transition duration-300 ease-linear"
+      />
+    </div>
   </div>
 </div>

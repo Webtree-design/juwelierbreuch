@@ -11,14 +11,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { DialogModule } from '@angular/cdk/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 // slider
-import { NgImageSliderModule } from 'ng-image-slider';
+// import { NgImageSliderModule } from 'ng-image-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +36,6 @@ import { ImpressumComponent } from './components/impressum/impressum.component';
 import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
 import { RootComponent } from './components/root/root.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +49,7 @@ import { RootComponent } from './components/root/root.component';
     InformationComponent,
     ImpressumComponent,
     DatenschutzComponent,
-    RootComponent
+    RootComponent,
   ],
   imports: [
     BrowserModule, //.withServerTransition({ appId: 'serverApp' }),
@@ -72,9 +71,6 @@ import { RootComponent } from './components/root/root.component';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatExpansionModule,
-
-    NgImageSliderModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent],

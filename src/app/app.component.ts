@@ -40,7 +40,9 @@ export class AppComponent {
     private elementRef: ElementRef,
     public snackBar: MatSnackBar,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    router.navigateByUrl('start');
+  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any) {
@@ -53,16 +55,16 @@ export class AppComponent {
   }
 
   async ngOnInit() {
-    await this.getMessage();
     this.message = [];
     this.news = [];
+    await this.getMessage();
+    this.getNews();
+    
   }
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action);
   }
-
- 
 
   public async getMessage() {
     this.dataService.getMessage().subscribe((res: any) => {
@@ -73,6 +75,10 @@ export class AppComponent {
       // this.openDialog();
       this.openSnackBar(this.message[0].title, 'OK!');
     });
+  }
+
+  public getNews() {
+    this.dataService.getNews();
   }
 
   private checkElementViewport() {

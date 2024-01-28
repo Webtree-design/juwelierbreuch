@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -7,33 +7,23 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent {
-  public news: any = [];
-  constructor(public dataService: DataService) {
-    this.getNews();
-  }
+  public news = this.dataService.news;
+  constructor(public dataService: DataService) {}
 
-  ngOnInit() {
-    this.news = [];
-  }
+  ngOnInit() {}
 
-  public getNews() {
-    this.dataService.getNews().subscribe((res: any) => {
-      if (res.length <= 0 || res.length == undefined) return;
-      res.forEach((el: any) => {
-        this.news.unshift(el);
-      });
-    });
-  }
   public formattedDateString(dateString: any) {
     const date = new Date(dateString);
-  
+
     const options: Intl.DateTimeFormatOptions = {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
     };
-  
+
     const formattedDate = date.toLocaleDateString('de-DE', options);
     return formattedDate;
   }
+
+  
 }

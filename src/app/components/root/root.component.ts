@@ -18,4 +18,15 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
   templateUrl: './root.component.html',
   styleUrls: ['./root.component.scss'],
 })
-export class RootComponent {}
+export class RootComponent {
+  // @ViewChild('section4') newsSection!: ElementRef;
+
+  // ngAfterViewInit() {
+  //   console.log(this.newsSection.nativeElement);
+  //   const x = this.newsSection.nativeElement;
+  //   const rect = x.getBoundingClientRect();
+  //   const height = rect.bottom - rect.top;
+
+  //   console.log(height);
+  // }
+}

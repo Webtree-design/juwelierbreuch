@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
   private headers: any;
+  news: any = [];
 
   constructor(private http: HttpClient) {
     this.setHeader();
@@ -24,14 +25,29 @@ export class DataService {
 
   public getNews() {
     const user = env.user;
-    return this.http.post<any>(`${env.apiURL}/newsOpen/get`, {user}, {
-      headers: this.headers,
-    });
+    return this.http
+      .post<any>(
+        `${env.apiURL}/newsOpen/get`,
+        { user },
+        {
+          headers: this.headers,
+        }
+      )
+      .subscribe((res) => {
+        if (res.length <= 0 || res.length == undefined) return;
+        res.forEach((el: any) => {
+          this.news.unshift(el);
+        });
+      });
   }
   public getMessage() {
     const user = env.user;
-    return this.http.post<any>(`${env.apiURL}/messageOpen/get`, {user}, {
-      headers: this.headers,
-    });
+    return this.http.post<any>(
+      `${env.apiURL}/messageOpen/get`,
+      { user },
+      {
+        headers: this.headers,
+      }
+    );
   }
 }

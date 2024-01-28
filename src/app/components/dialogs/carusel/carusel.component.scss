@@ -72,108 +72,111 @@
 //   height: 100% !important;
 // }
 
-::ng-deep
-  .ng-image-slider
-  .ng-image-slider-container
-  .main
-  .main-inner
-  .img-div {
-  box-shadow: none !important;
-  border-radius: none !important;
-  // border: inset 32px rgba(0, 128, 0, 0);
-}
-::ng-deep
-  .ng-image-slider
-  .ng-image-slider-container
-  .main
-  .main-inner
-  .img-div
-  .caption {
-  box-shadow: none !important;
-  border-radius: none !important;
-  background-image: none !important;
-  text-align: left !important;
-  display: none !important;
+// ::ng-deep
+//   .ng-image-slider
+//   .ng-image-slider-container
+//   .main
+//   .main-inner
+//   .img-div {
+//   box-shadow: none !important;
+//   border-radius: none !important;
+//   // border: inset 32px rgba(0, 128, 0, 0);
+// }
+// ::ng-deep
+//   .ng-image-slider
+//   .ng-image-slider-container
+//   .main
+//   .main-inner
+//   .img-div
+//   .caption {
+//   box-shadow: none !important;
+//   border-radius: none !important;
+//   background-image: none !important;
+//   text-align: left !important;
+//   display: none !important;
+// }
+
+// @media only screen and (min-width: 1024px) {
+//   ::ng-deep
+//     .ng-image-slider
+//     .ng-image-slider-container
+//     .main
+//     .main-inner
+//     .img-div
+//     img {
+//     padding-right: 0px !important ;
+//     // transform: scale(0.9);
+//     // padding: 16px !important;
+//     // padding-left: 0px !important;
+//     border-radius: none !important;
+//     object-fit: cover !important;
+//     transition: var(--shortTransition);
+//     backface-visibility: hidden;
+//     -webkit-font-smoothing: subpixel-antialiased;
+//   }
+// }
+// @media only screen and (max-width: 1024px) {
+//   ::ng-deep
+//     .ng-image-slider
+//     .ng-image-slider-container
+//     .main
+//     .main-inner
+//     .img-div
+//     img {
+//     padding: 0px !important;
+//     border-radius: none !important;
+//     // border-inline: solid 20px transparent !important;
+//     object-fit: cover !important;
+//     transition: var(--shortTransition);
+//     backface-visibility: hidden;
+//     -webkit-font-smoothing: subpixel-antialiased;
+//   }
+// }
+
+// ::ng-deep .ng-image-slider .ng-image-slider-container .main .prev {
+//   background-color: var(--background-X) !important;
+// }
+// ::ng-deep .ng-image-slider .ng-image-slider-container .main .next {
+//   background-color: var(--background-X) !important;
+// }
+// // https://www.pinterest.de/pin/593912269633395587/
+// // https://www.pinterest.de/pin/50172983341925262/
+
+// ::ng-deep
+//   .ng-image-slider
+//   .ng-image-slider-container
+//   .main
+//   .main-inner
+//   .img-div
+//   img,
+// .ng-image-slider .ng-image-slider-container .main .main-inner .img-div video {
+//   width: 95% !important;
+//   border-radius: 0 !important;
+//   margin: 0 !important;
+//   // width: auto !important;
+// }
+
+// .naviagtion {
+//   button:active {
+//     opacity: 0.4;
+//     transition: var(--shortTransition);
+//   }
+// }
+// ::ng-deep .naviagtion {
+//   button {
+//     fill: var(--accent) !important;
+//     transition: var(--shortTransition);
+//   }
+// }
+
+.zoom:hover {
+  transition: var(--longTransition);
+  transform: scale(1.05);
 }
 
-@media only screen and (min-width: 1024px) {
-  ::ng-deep
-    .ng-image-slider
-    .ng-image-slider-container
-    .main
-    .main-inner
-    .img-div
-    img {
-    padding: 16px !important;
-    border-radius: none !important;
-    object-fit: contain !important;
-    transition: var(--shortTransition);
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  ::ng-deep
-    .ng-image-slider
-    .ng-image-slider-container
-    .main
-    .main-inner
-    .img-div
-    img {
-    // padding: 0px !important;
-    border-radius: none !important;
-    object-fit: cover !important;
-    transition: var(--shortTransition);
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
-}
-
-::ng-deep
-  .ng-image-slider
-  .ng-image-slider-container
-  .main
-  .main-inner
-  .img-div
-  img:hover {
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
-  // transform: translateZ(10%);
-  transform: scale(105%) perspective(10px);
-  transition: var(--shortTransition);
-  will-change: transform;
-  cursor: pointer;
-}
-
-::ng-deep .ng-image-slider .ng-image-slider-container .main .prev {
-  background-color: var(--background-X) !important;
-}
-::ng-deep .ng-image-slider .ng-image-slider-container .main .next {
-  background-color: var(--background-X) !important;
-}
-// https://www.pinterest.de/pin/593912269633395587/
-// https://www.pinterest.de/pin/50172983341925262/
-
-::ng-deep
-  .ng-image-slider
-  .ng-image-slider-container
-  .main
-  .main-inner
-  .img-div
-  img,
-.ng-image-slider .ng-image-slider-container .main .main-inner .img-div video {
-  border-radius: 0 !important;
-}
-
-.naviagtion {
-  button:active {
-    opacity: 0.4;
-    transition: var(--shortTransition);
-  }
-}
-::ng-deep .naviagtion {
-  button {
-    fill: var(--accent) !important;
-    transition: var(--shortTransition);
+.zoom {
+  transition: var(--longTransition);
+  img {
+    object-fit: cover;
   }
 }
