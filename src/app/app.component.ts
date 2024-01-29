@@ -19,7 +19,7 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'webtreedesign';
+  title = 'juwelierbreuch';
   public toolbarStyle: any = 'ngStyleBefore';
   firmenmail = 'mail.de';
   width: number = 0;
