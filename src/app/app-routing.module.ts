@@ -4,12 +4,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { ImpressumComponent } from './components/impressum/impressum.component';
 import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
 import { RootComponent } from './components/root/root.component';
+import { UeberunspageComponent } from './components/ueberunspage/ueberunspage.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
   {
     path: 'start',
     component: RootComponent,
+  },
+  {
+    path: 'ueberuns',
+    component: UeberunspageComponent,
   },
   {
     path: 'impressum',

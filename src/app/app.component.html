@@ -91,46 +91,88 @@
       <div class="cursor-pointer" [routerLink]="['/start']" fragment="webtree">
         <img
           style="height: 70px"
-          src="../assets/webtree/logo.png"
+          src="../assets/juwelierbreuch/Logo neu.png"
           alt="juwelierbreuch"
         />
       </div>
 
       <ul class="toolbar-ul gap-x-12 flex flex-row items-center justify-center">
         <li>
-          <a
-            [ngClass]="one"
-            [routerLink]="['/start']"
-            fragment="webtree"
-            class="block rounded"
-            >Start</a
-          >
-        </li>
-        <li>
-          <a
-            [ngClass]="two"
-            [routerLink]="['/start']"
-            fragment="ueberuns"
-            class="block rounded"
-            >Über uns</a
-          >
+          <a [routerLink]="['/start']" class="block rounded">Start</a>
         </li>
 
         <li>
-          <a
-            [ngClass]="four"
-            [routerLink]="['/start']"
-            fragment="news"
-            class="block rounded"
-            >News</a
+          <button
+            class="noSelect flex flex-row justify-center items-center"
+            #menuTriggerLeistungen="matMenuTrigger"
+            [matMenuTriggerFor]="menuLeistungen"
           >
+            <a>Leistungen</a>
+            <svg
+              [ngClass]="menuTriggerLeistungen.menuOpen ? 'opened' : 'closed'"
+              class="m-auto"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+            >
+              <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+            </svg>
+          </button>
+
+          <mat-menu #menuLeistungen="matMenu">
+            <button mat-menu-item>Trauringe</button>
+            <button mat-menu-item>Uhren</button>
+            <button mat-menu-item>Schmuck</button>
+          </mat-menu>
         </li>
+
         <li>
-          <a
-            [ngClass]="five"
-            [routerLink]="['/start']"
-            fragment="kontakt"
-            class="block rounded"
+          <button
+            class="noSelect flex flex-row justify-center items-center"
+            #menuTriggerUeberuns="matMenuTrigger"
+            [matMenuTriggerFor]="menuUeberuns"
+          >
+            <a>Über uns</a>
+            <svg
+              [ngClass]="menuTriggerUeberuns.menuOpen ? 'opened' : 'closed'"
+              class="m-auto"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+            >
+              <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+            </svg>
+          </button>
+
+          <mat-menu #menuUeberuns="matMenu">
+            <button
+              mat-menu-item
+              [routerLink]="['/ueberuns']"
+              fragment="uhrmachermeister"
+            >
+              Uhrmachermeister
+            </button>
+            <button
+              mat-menu-item
+              [routerLink]="['/ueberuns']"
+              fragment="goldschmiede"
+            >
+              Goldschmiede
+            </button>
+            <button
+              mat-menu-item
+              [routerLink]="['/ueberuns']"
+              fragment="familienbetrieb"
+            >
+              Familienbetrieb
+            </button>
+          </mat-menu>
+        </li>
+
+        <li>
+          <a [routerLink]="['/start']" fragment="kontakt" class="block rounded"
             >Kontakt</a
           >
         </li>
@@ -147,7 +189,7 @@
     <div class="cursor-pointer" [routerLink]="['/start']" fragment="webtree">
       <img
         style="height: 70px"
-        src="../assets/webtree/logo.png"
+        src="../assets/juwelierbreuch/Logo neu.png"
         alt="juwelierbreuch"
       />
     </div>
@@ -181,7 +223,7 @@
           fragment="webtree"
           class="hover:underline mb-3"
         >
-          Juwelier Breuch
+          Webtree-Design
         </p>
       </span>
       <ul

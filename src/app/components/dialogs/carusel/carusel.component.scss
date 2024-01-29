@@ -171,7 +171,7 @@
 
 .zoom:hover {
   transition: var(--longTransition);
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .zoom {
@@ -179,4 +179,25 @@
   img {
     object-fit: cover;
   }
+}
+
+.mehrErfahrenBox {
+  .mehrErfahrenText {
+    transition: var(--shortTransition);
+    color: #2564eb;
+  }
+}
+
+.mehrErfahrenBox {
+  max-height: 350px;
+  max-width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.mehrErfahrenBox img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
 }

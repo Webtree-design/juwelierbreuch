@@ -35,6 +35,8 @@ import { InformationComponent } from './components/sections/information/informat
 import { ImpressumComponent } from './components/impressum/impressum.component';
 import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
 import { RootComponent } from './components/root/root.component';
+import { UeberunspageComponent } from './components/ueberunspage/ueberunspage.component';
+import { LeistungenpageComponent } from './components/leistungenpage/leistungenpage.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { RootComponent } from './components/root/root.component';
     ImpressumComponent,
     DatenschutzComponent,
     RootComponent,
+    UeberunspageComponent,
+    LeistungenpageComponent,
   ],
   imports: [
     BrowserModule, //.withServerTransition({ appId: 'serverApp' }),

@@ -12,6 +12,7 @@ import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-root',
@@ -26,12 +27,12 @@ export class AppComponent {
   public message: any = [];
   public news: any = [];
 
-  one: String = '';
-  two: String = '';
-  three: String = '';
-  four: String = '';
-  five: String = '';
-  fragment: any;
+  // one: String = '';
+  // two: String = '';
+  // three: String = '';
+  // four: String = '';
+  // five: String = '';
+  // fragment: any;
 
   constructor(
     public dataService: DataService,
@@ -43,11 +44,16 @@ export class AppComponent {
   ) {
     router.navigateByUrl('start');
   }
+  @ViewChild('menuTriggerUeberuns') menuTriggerUeberuns!: MatMenuTrigger;
+  @ViewChild('menuTriggerLeistungen') menuTriggerLeistungen!: MatMenuTrigger;
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any) {
     this.width = window.innerWidth;
     this.checkElementViewport();
+    if (this.menuTriggerUeberuns.menuOpen) this.menuTriggerUeberuns.closeMenu();
+    if (this.menuTriggerLeistungen.menuOpen)
+      this.menuTriggerLeistungen.closeMenu();
   }
   @HostListener('window:load', ['$event'])
   onLoad(event: any) {
@@ -59,7 +65,6 @@ export class AppComponent {
     this.news = [];
     await this.getMessage();
     this.getNews();
-    
   }
 
   openSnackBar(message: string, action: string) {
