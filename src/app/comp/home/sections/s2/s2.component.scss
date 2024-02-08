@@ -1,0 +1,30 @@
+* {
+  color: var(--textcolor);
+}
+
+.backgroundLayer {
+  background-image: url(../../../../../assets/new/taschenuhr_opacity.png);
+  background-size: 100vh;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.zoom:hover {
+  will-change: transform;
+  backface-visibility: hidden;
+  transition: var(--longTransition);
+  transform: scale(1.0099);
+}
+
+.zoom {
+  will-change: transform;
+  backface-visibility: hidden;
+  transition: var(--longTransition);
+  img {
+    object-fit: cover;
+  }
+}
+.member {
+  border: 6px double var(--accent);
+  border-radius: 12px;
+}

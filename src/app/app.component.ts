@@ -6,7 +6,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { DataService } from './services/data.service';
-import { PopupComponent } from './components/dialogs/popup/popup.component';
 import { Dialog, DialogModule, DialogRef } from '@angular/cdk/dialog';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';

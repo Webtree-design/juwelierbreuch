@@ -121,9 +121,27 @@
           </button>
 
           <mat-menu #menuLeistungen="matMenu">
-            <button mat-menu-item>Trauringe</button>
-            <button mat-menu-item>Uhren</button>
-            <button mat-menu-item>Schmuck</button>
+            <button
+              [routerLink]="['/leistungen']"
+              fragment="trauringe"
+              mat-menu-item
+            >
+              Trauringe
+            </button>
+            <button
+              [routerLink]="['/leistungen']"
+              fragment="uhren"
+              mat-menu-item
+            >
+              Uhren
+            </button>
+            <button
+              [routerLink]="['/leistungen']"
+              fragment="schmuck"
+              mat-menu-item
+            >
+              Schmuck
+            </button>
           </mat-menu>
         </li>
 

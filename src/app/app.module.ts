@@ -24,36 +24,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { StartComponent } from './components/sections/start/start.component';
-import { UeberunsComponent } from './components/sections/ueberuns/ueberuns.component';
-import { PopupComponent } from './components/dialogs/popup/popup.component';
-import { NewsComponent } from './components/sections/news/news.component';
-import { KontaktComponent } from './components/sections/kontakt/kontakt.component';
-import { ExpanderComponent } from './components/sections/expander/expander.component';
-import { CaruselComponent } from './components/dialogs/carusel/carusel.component';
-import { InformationComponent } from './components/sections/information/information.component';
-import { ImpressumComponent } from './components/impressum/impressum.component';
-import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
-import { RootComponent } from './components/root/root.component';
-import { UeberunspageComponent } from './components/ueberunspage/ueberunspage.component';
-import { LeistungenpageComponent } from './components/leistungenpage/leistungenpage.component';
+import { HomeComponent } from './comp/home/home.component';
+import { LeistungenComponent } from './comp/leistungen/leistungen.component';
+import { S1Component } from './comp/home/sections/s1/s1.component';
+import { S2Component } from './comp/home/sections/s2/s2.component';
+import { S3Component } from './comp/home/sections/s3/s3.component';
+import { L1Component } from './comp/leistungen/sections/l1/l1.component';
+import { L2Component } from './comp/leistungen/sections/l2/l2.component';
+import { L3Component } from './comp/leistungen/sections/l3/l3.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StartComponent,
-    UeberunsComponent,
-    PopupComponent,
-    NewsComponent,
-    KontaktComponent,
-    ExpanderComponent,
-    CaruselComponent,
-    InformationComponent,
-    ImpressumComponent,
-    DatenschutzComponent,
-    RootComponent,
-    UeberunspageComponent,
-    LeistungenpageComponent,
+    HomeComponent,
+    LeistungenComponent,
+    S1Component,
+    S2Component,
+    S3Component,
+    L1Component,
+    L2Component,
+    L3Component,
   ],
   imports: [
     BrowserModule, //.withServerTransition({ appId: 'serverApp' }),

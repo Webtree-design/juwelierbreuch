@@ -1,28 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ImpressumComponent } from './components/impressum/impressum.component';
-import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
-import { RootComponent } from './components/root/root.component';
-import { UeberunspageComponent } from './components/ueberunspage/ueberunspage.component';
+import { LeistungenComponent } from './comp/leistungen/leistungen.component';
+import { HomeComponent } from './comp/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
   {
     path: 'start',
-    component: RootComponent,
+    component: HomeComponent,
   },
   {
-    path: 'ueberuns',
-    component: UeberunspageComponent,
-  },
-  {
-    path: 'impressum',
-    component: ImpressumComponent,
-  },
-  {
-    path: 'datenschutz',
-    component: DatenschutzComponent,
+    path: 'leistungen',
+    component: LeistungenComponent,
   },
 ];
 

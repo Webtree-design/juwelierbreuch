@@ -46,16 +46,22 @@ body {
 }
 body {
   margin: 0;
-  font-family: "Forum", sans-serif;
+  font-family: "Ovo2", sans-serif;
   // color: var(--textcolor);
   background-color: var(--toolbar);
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 @font-face {
-  font-family: "Forum";
-  src: url("./assets/webtree/Forum-Regular.ttf") format("truetype");
+  font-family: "Ovo1";
+  src: url("./assets/juwelierbreuch/PlayfairDisplay-Italic-VariableFont_wght.ttf")
+    format("truetype");
   font-weight: bold;
+}
+@font-face {
+  font-family: "Ovo2";
+  src: url("./assets/juwelierbreuch/PlayfairDisplay-VariableFont_wght.ttf")
+    format("truetype");
 }
 
 :root {
@@ -64,11 +70,11 @@ body {
 
   // --accent: #9AC0D4;
   // --second: #28408b;
-  --accent: rgb(35, 109, 85);
-  --second: #1a4954;
+  --accent: #eedcc1;
+  // --second: #fffa9c;
 
-  --accent-X: #236d5590;
-  --second-X: #1a495490;
+  --accent-X: #eedcc1b3;
+  // --second-X: #1a495490;
 
   --background: #f5f3ef;
   --toolbar: #f3f0eb;
