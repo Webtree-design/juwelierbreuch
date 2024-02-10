@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,33 +17,38 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-// slider
-// import { NgImageSliderModule } from 'ng-image-slider';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HomeComponent } from './comp/home/home.component';
-import { LeistungenComponent } from './comp/leistungen/leistungen.component';
 import { S1Component } from './comp/home/sections/s1/s1.component';
 import { S2Component } from './comp/home/sections/s2/s2.component';
 import { S3Component } from './comp/home/sections/s3/s3.component';
-import { L1Component } from './comp/leistungen/sections/l1/l1.component';
-import { L2Component } from './comp/leistungen/sections/l2/l2.component';
-import { L3Component } from './comp/leistungen/sections/l3/l3.component';
+
+// slider
+import { register } from 'swiper/element/bundle';
+import { TrauringeComponent } from './comp/leistungen/trauringe/trauringe.component';
+import { UhrenComponent } from './comp/leistungen/uhren/uhren.component';
+import { SchmuckComponent } from './comp/leistungen/schmuck/schmuck.component';
+import { UhrmacherComponent } from './comp/ueberuns/uhrmacher/uhrmacher.component';
+import { SchmiedComponent } from './comp/ueberuns/schmied/schmied.component';
+import { FamilienbetriebComponent } from './comp/ueberuns/familienbetrieb/familienbetrieb.component';
+register();
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LeistungenComponent,
     S1Component,
     S2Component,
     S3Component,
-    L1Component,
-    L2Component,
-    L3Component,
+    TrauringeComponent,
+    UhrenComponent,
+    SchmuckComponent,
+    UhrmacherComponent,
+    SchmiedComponent,
+    FamilienbetriebComponent,
   ],
   imports: [
     BrowserModule, //.withServerTransition({ appId: 'serverApp' }),
@@ -68,5 +73,6 @@ import { L3Component } from './comp/leistungen/sections/l3/l3.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

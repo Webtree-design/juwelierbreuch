@@ -31,19 +31,19 @@
     </div>
   </section>
 
-  <section class="px-6 pb-12">
+  <!-- <section class="px-6 pb-12">
     <div class="mx-auto max-w-screen-xl">
       <h3 class="mb-6 text-right text-3xl font-bold tracking-tight">
         ÜBER UNSEREN BETRIEB
       </h3>
       <div class="mx-auto max-w-screen-xl">
-        <div class="grid gap-6 md:grid-cols-3">
+        <div class="grid gap-6 lg:grid-cols-3">
           <div class="member">
             <div class="p-6 h-full flex flex-col justify-between">
               <div>
                 <h5 class="mb-2 text-2xl font-semibold">Uhrmachermeister</h5>
-                <p class="mb-3">
-                  Unsere Werkstatt ist eine Meisteruhrmacherwerkstatt, in der
+                <p class="mb-3 break-after-all">
+                  Unsere Werkstatt ist eine Meister - Uhrmacherwerkstatt, in der
                   präzise Handwerkskunst und Hingabe zu einzigartigen Uhren und
                   Schmuckstücken verschmelzen
                 </p>
@@ -95,9 +95,123 @@
     </div>
     <div class="mx-auto mt-12 max-w-screen-xl flex items-center justify-center">
       <button
+        routerLink="/kontakt"
         class="px-6 py-3 inline-block rounded border-2 border-[var(--accent-X)] text-[var(--textcolor)] hover:border-[var(--accent)] hover:bg-[var(--accent-X)] transition duration-300 ease-in-out"
       >
-        Über uns!
+        Kontaktieren Sie uns!
+      </button>
+    </div>
+  </section> -->
+  <section class="px-6 pb-12">
+    <div class="mx-auto max-w-screen-xl">
+      <h3 class="mb-6 text-right text-3xl font-bold tracking-tight">
+        ÜBER UNSEREN BETRIEB
+      </h3>
+      <div class="mx-auto max-w-screen-xl">
+        <div class="grid gap-6 md:grid-cols-3">
+          <div
+            class="mehrErfahrenBox zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
+            style="background-position: 50%; cursor: pointer"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="dark"
+            routerLink="/ueberuns/uhrmachermeister"
+          >
+            <img
+              src="../../../../../assets/_assets/home/s2/Uhrmacher1.png"
+              class="w-full h-full object-contain transition duration-300 ease-linear align-middle"
+            />
+            <a>
+              <div
+                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+                style="background-color: rgba(0, 0, 0, 0.3)"
+              >
+                <div class="flex justify-start items-end h-full">
+                  <div class="gap-2 m-4">
+                    <h5 class="text-lg font-bold text-white">
+                      Uhrmachermeister
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div
+                  class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                  style="background-color: rgba(253, 253, 253, 0.15)"
+                ></div>
+              </div>
+            </a>
+          </div>
+          <div
+            class="mehrErfahrenBox zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
+            style="background-position: 50%; cursor: pointer"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="dark"
+            routerLink="/ueberuns/goldschmiede"
+          >
+            <img
+              src="../../../../../assets/_assets/home/s2/Goldschmied1.png"
+              class="w-full h-full object-contain transition  duration-300 ease-linear align-middle"
+            />
+            <a>
+              <div
+                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+                style="background-color: rgba(0, 0, 0, 0.3)"
+              >
+                <div class="flex justify-start items-end h-full">
+                  <div class="gap-2 m-4">
+                    <h5 class="text-lg font-bold  text-white">Goldschmiede</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div
+                  class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                  style="background-color: rgba(253, 253, 253, 0.15)"
+                ></div>
+              </div>
+            </a>
+          </div>
+          <div
+            class="mehrErfahrenBox zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
+            style="background-position: 50%; cursor: pointer"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="dark"
+            routerLink="/ueberuns/familienbetrieb"
+          >
+            <img
+              src="../../../../../assets/_assets/home/s2/Laden02.jpg"
+              class="w-full h-full object-contain transition duration-300 ease-linear align-middle"
+            />
+            <a>
+              <div
+                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+                style="background-color: rgba(0, 0, 0, 0.3)"
+              >
+                <div class="flex justify-start items-end h-full">
+                  <div class="gap-2 m-4">
+                    <h5 class="text-lg font-bold text-white">
+                      Familienbetrieb
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div
+                  class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                  style="background-color: rgba(253, 253, 253, 0.15)"
+                ></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto mt-12 max-w-screen-xl flex items-center justify-center">
+      <button
+        [routerLink]="['/kontakt']"
+        class="px-6 py-3 inline-block rounded border-2 border-[var(--accent-X)] text-[var(--textcolor)] hover:border-[var(--accent)] hover:bg-[var(--accent-X)] transition duration-300 ease-in-out"
+      >
+        Kontaktieren Sie uns!
       </button>
     </div>
   </section>

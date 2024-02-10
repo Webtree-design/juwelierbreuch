@@ -25,6 +25,8 @@ export class AppComponent {
   width: number = 0;
   public message: any = [];
   public news: any = [];
+  panelOpenStateUeberuns = false;
+  panelOpenStateLeistungen = false;
 
   // one: String = '';
   // two: String = '';
@@ -41,7 +43,7 @@ export class AppComponent {
     public snackBar: MatSnackBar,
     private route: ActivatedRoute
   ) {
-    router.navigateByUrl('start');
+    // router.navigateByUrl('start');
   }
   @ViewChild('menuTriggerUeberuns') menuTriggerUeberuns!: MatMenuTrigger;
   @ViewChild('menuTriggerLeistungen') menuTriggerLeistungen!: MatMenuTrigger;

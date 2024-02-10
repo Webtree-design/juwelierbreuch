@@ -7,10 +7,10 @@
   <mat-drawer
     #sidenav
     #drawer
-    class="w-[320px] h-screen"
+    class="w-[320px] h-screen max-w-[100vw]"
     mode="over"
     position="end"
-    style="position: fixed; background-color: var(--toolbar)"
+    style="position: fixed; background-color: var(--background)"
   >
     <div class="py-1 flex justify-center">
       <button
@@ -31,51 +31,129 @@
       </button>
     </div>
 
-    <ul class="toolbar-ul flex flex-col py-0 p-4">
+    <ul class="toolbar-ul sidepanel flex flex-col py-0 p-4">
       <li class="my-[8px]">
         <a
-          [routerLink]="['/start']"
-          fragment="webtree"
           (click)="drawer.close()"
-          class="startroute block rounded"
+          routerLink="/start"
+          routerLinkActive="routeIsActive"
+          class="block rounded"
           >Start</a
         >
       </li>
       <mat-divider></mat-divider>
-      <li class="my-[8px]">
-        <a
-          [routerLink]="['/start']"
-          fragment="ueberuns"
-          (click)="drawer.close()"
-          class="block rounded"
-          >Über uns
-        </a>
+      <li>
+        <mat-expansion-panel
+          hideToggle
+          (opened)="panelOpenStateLeistungen = true"
+          (closed)="panelOpenStateLeistungen = false"
+        >
+          <mat-expansion-panel-header class="flex flex-row">
+            <mat-panel-title class="title-big flex justify-start">
+              Leistungen</mat-panel-title
+            >
+            <div class="flex justify-center items-center basis-1/12">
+              <svg
+                [ngClass]="panelOpenStateLeistungen ? 'open' : 'closed'"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+                style="fill: var(--textcolor)"
+              >
+                <path
+                  d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"
+                />
+              </svg>
+            </div>
+          </mat-expansion-panel-header>
+          <p
+            [routerLink]="['/leistungen/trauringe']"
+            (click)="drawer.close()"
+            class="mb-4 mt-1 px-3"
+          >
+            Trauringe
+          </p>
+          <p
+            [routerLink]="['/leistungen/uhren']"
+            (click)="drawer.close()"
+            class="mb-4 px-3"
+          >
+            Uhren
+          </p>
+          <p
+            [routerLink]="['/leistungen/schmuck']"
+            (click)="drawer.close()"
+            class="mb-4 px-3"
+          >
+            Schmuck
+          </p>
+        </mat-expansion-panel>
+      </li>
+      <mat-divider></mat-divider>
+      <li>
+        <mat-expansion-panel
+          hideToggle
+          (opened)="panelOpenStateUeberuns = true"
+          (closed)="panelOpenStateUeberuns = false"
+        >
+          <mat-expansion-panel-header class="flex flex-row">
+            <mat-panel-title class="title-big flex justify-start">
+              Über uns</mat-panel-title
+            >
+            <div class="flex justify-center items-center basis-1/12">
+              <svg
+                [ngClass]="panelOpenStateUeberuns ? 'open' : 'closed'"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+                style="fill: var(--textcolor)"
+              >
+                <path
+                  d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"
+                />
+              </svg>
+            </div>
+          </mat-expansion-panel-header>
+          <p
+            [routerLink]="['/ueberuns/uhrmachermeister']"
+            (click)="drawer.close()"
+            class="mb-4 mt-1 px-3"
+          >
+            Uhrmachermeister
+          </p>
+          <p
+            [routerLink]="['/ueberuns/goldschmiede']"
+            (click)="drawer.close()"
+            class="mb-4 px-3"
+          >
+            Goldschmiede
+          </p>
+          <p
+            [routerLink]="['/ueberuns/familienbetrieb']"
+            (click)="drawer.close()"
+            class="mb-4 px-3"
+          >
+            Familienbetrieb
+          </p>
+        </mat-expansion-panel>
       </li>
 
       <mat-divider></mat-divider>
       <li class="my-[8px]">
         <a
-          [routerLink]="['/start']"
-          fragment="news"
           (click)="drawer.close()"
-          class="block rounded"
-          >News
-        </a>
-      </li>
-      <mat-divider></mat-divider>
-      <li class="my-[8px]">
-        <a
-          [routerLink]="['/start']"
-          fragment="kontakt"
-          (click)="drawer.close()"
+          routerLink="/kontakt"
+          routerLinkActive="routeIsActive"
           class="block rounded"
           >Kontakt
         </a>
       </li>
-      <!-- <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
       <li class="my-[16px]">
         <a href="tel:123123123">+49 123 123123</a>
-      </li> -->
+      </li>
     </ul>
   </mat-drawer>
 
@@ -86,12 +164,12 @@
     style="z-index: 100"
   >
     <div
-      class="w-[100%] flex flex-row justify-between mx-auto max-w-screen-xl px-3 py-3"
+      class="w-[100%] flex flex-row justify-between mx-auto max-w-screen-xl px-6 py-3"
     >
-      <div class="cursor-pointer" [routerLink]="['/start']" fragment="webtree">
+      <div class="cursor-pointer" [routerLink]="['/start']">
         <img
           style="height: 70px"
-          src="../assets/juwelierbreuch/Logo neu.png"
+          src="../assets/Logo neu.png"
           alt="juwelierbreuch"
         />
       </div>
@@ -121,25 +199,13 @@
           </button>
 
           <mat-menu #menuLeistungen="matMenu">
-            <button
-              [routerLink]="['/leistungen']"
-              fragment="trauringe"
-              mat-menu-item
-            >
+            <button [routerLink]="['/leistungen/trauringe']" mat-menu-item>
               Trauringe
             </button>
-            <button
-              [routerLink]="['/leistungen']"
-              fragment="uhren"
-              mat-menu-item
-            >
+            <button [routerLink]="['/leistungen/uhren']" mat-menu-item>
               Uhren
             </button>
-            <button
-              [routerLink]="['/leistungen']"
-              fragment="schmuck"
-              mat-menu-item
-            >
+            <button [routerLink]="['/leistungen/schmuck']" mat-menu-item>
               Schmuck
             </button>
           </mat-menu>
@@ -165,34 +231,20 @@
           </button>
 
           <mat-menu #menuUeberuns="matMenu">
-            <button
-              mat-menu-item
-              [routerLink]="['/ueberuns']"
-              fragment="uhrmachermeister"
-            >
+            <button mat-menu-item [routerLink]="['/ueberuns/uhrmachermeister']">
               Uhrmachermeister
             </button>
-            <button
-              mat-menu-item
-              [routerLink]="['/ueberuns']"
-              fragment="goldschmiede"
-            >
+            <button mat-menu-item [routerLink]="['/ueberuns/goldschmied']">
               Goldschmiede
             </button>
-            <button
-              mat-menu-item
-              [routerLink]="['/ueberuns']"
-              fragment="familienbetrieb"
-            >
+            <button mat-menu-item [routerLink]="['/ueberuns/familienbetrieb']">
               Familienbetrieb
             </button>
           </mat-menu>
         </li>
 
         <li>
-          <a [routerLink]="['/start']" fragment="kontakt" class="block rounded"
-            >Kontakt</a
-          >
+          <a [routerLink]="['/start']" class="block rounded">Kontakt</a>
         </li>
       </ul>
     </div>
@@ -204,10 +256,10 @@
     class="fixed flex justify-between items-center md:hidden w-[100%] h-[90px] px-6"
     style="z-index: 100"
   >
-    <div class="cursor-pointer" [routerLink]="['/start']" fragment="webtree">
+    <div class="cursor-pointer" [routerLink]="['/start']">
       <img
         style="height: 70px"
-        src="../assets/juwelierbreuch/Logo neu.png"
+        src="../assets/Logo neu.png"
         alt="juwelierbreuch"
       />
     </div>
@@ -236,11 +288,7 @@
     <div class="notranslate mx-auto flex flex-col text-center items-center">
       <span class="text-sm">
         <!-- clickscroll -->
-        <p
-          [routerLink]="['/start']"
-          fragment="webtree"
-          class="hover:underline mb-3"
-        >
+        <p [routerLink]="['/start']" class="hover:underline mb-3">
           Webtree-Design
         </p>
       </span>

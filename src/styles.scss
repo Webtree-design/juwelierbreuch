@@ -54,13 +54,13 @@ body {
 }
 @font-face {
   font-family: "Ovo1";
-  src: url("./assets/juwelierbreuch/PlayfairDisplay-Italic-VariableFont_wght.ttf")
+  src: url("./assets/_assets/PlayfairDisplay-Italic-VariableFont_wght.ttf")
     format("truetype");
   font-weight: bold;
 }
 @font-face {
   font-family: "Ovo2";
-  src: url("./assets/juwelierbreuch/PlayfairDisplay-VariableFont_wght.ttf")
+  src: url("./assets/_assets/PlayfairDisplay-VariableFont_wght.ttf")
     format("truetype");
 }
 
@@ -83,19 +83,24 @@ body {
   --background-X: #9394964b;
 
   --fontsize: 20px;
+
+  --swiper-navigation-color: #eedcc1 !important;
+  --swiper-theme-color: #eedcc1 !important;
+  --swiper-pagination-color: #eedcc1 !important;
 }
 
-::ng-deep {
-  --mdc-checkbox-selected-icon-color: #236d55 !important;
-  --mdc-checkbox-selected-hover-icon-color: #236d55 !important;
-  --mdc-checkbox-selected-focus-icon-color: #236d55 !important;
-  --mat-option-selected-state-label-text-color: #236d55 !important;
-  --mdc-checkbox-selected-pressed-icon-color: #236d55 !important;
-  --mdc-checkbox-selected-focus-state-layer-color: #236d55 !important;
-  --mdc-checkbox-selected-hover-state-layer-color: #236d55 !important;
-  --mdc-checkbox-selected-pressed-state-layer-color: #236d55 !important;
-  --mat-snack-bar-button-color: #236d55 !important;
-}
+// ::ng-deep {
+//   --mdc-checkbox-selected-icon-color: #236d55 !important;
+//   --mdc-checkbox-selected-hover-icon-color: #236d55 !important;
+//   --mdc-checkbox-selected-focus-icon-color: #236d55 !important;
+//   --mat-option-selected-state-label-text-color: #236d55 !important;
+//   --mdc-checkbox-selected-pressed-icon-color: #236d55 !important;
+//   --mdc-checkbox-selected-focus-state-layer-color: #236d55 !important;
+//   --mdc-checkbox-selected-hover-state-layer-color: #236d55 !important;
+//   --mdc-checkbox-selected-pressed-state-layer-color: #236d55 !important;
+//   --mat-snack-bar-button-color: #236d55 !important;
+
+// }
 ::ng-deep .mat-accent {
   color: var(--accent) !important;
 }
@@ -159,4 +164,36 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  .banner {
+    height: 190px;
+    width: 100%;
+    background-position: 50% 10%;
+    background-image: url(./assets/_assets/antrag.png);
+    opacity: 0.9;
+    background-repeat: no-repeat;
+  }
+}
+
+@supports not (-webkit-touch-callout: none) {
+  /* CSS for other than iOS devices */
+  .banner {
+    height: 190px;
+    width: 100%;
+    background-position: 50% 50%;
+    background-image: url(./assets/_assets/antrag.png);
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
+div.anchor {
+  display: block !important;
+  position: relative !important;
+  top: -85px !important;
+  visibility: hidden !important;
 }

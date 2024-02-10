@@ -5,13 +5,13 @@
     <div
       class="relative overflow-hidden bg-no-repeat bg-cover"
       style="
-        background-position: 50% 50%;
+        background-position: 50% 100%;
         background-image: linear-gradient(
             to right,
             rgba(255, 255, 255, 0),
-            rgba(35, 109, 85, 0.2)
+            rgba(99, 99, 99, 0.3)
           ),
-          url('../../../assets/juwelierbreuch/zwei-goldene-eheringe.jpg');
+          url('../../../../../assets/_assets/home/s1/2ringe_biebel.png');
 
         height: 50vh;
       "
@@ -20,16 +20,16 @@
         <div class="flex justify-center lg:justify-end items-center flex-grow">
           <div class="rounded-sm text-center py-6 lg:mr-3">
             <h1
-              class="text-4xl font-bold"
-              style="color: var(--toolbar) !important"
+              class="text-4xl mb-2 font-bold"
+              style="color: var(--background) !important"
             >
               Puls der Zeit
             </h1>
             <p
               class="text-5xl font-medium"
               style="
-                color: var(--toolbar) !important;
-                border-top: solid 1px var(--toolbar);
+                color: var(--background) !important;
+                border-top: solid 1px var(--background);
               "
             >
               Juwelier Breuch
@@ -84,12 +84,11 @@
             style="background-position: 50%; cursor: pointer"
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
-            routerLink="/about"
-            fragment="goldschmiede"
+            routerLink="/leistungen/trauringe"
           >
             <img
-              src="../../../../assets/juwelierbreuch/trauringe.jpg"
-              class="w-full transition duration-300 ease-linear align-middle"
+              src="../../../../../assets/_assets/home/s1/2singe auf teppich.png"
+              class="w-full h-full object-contain transition duration-300 ease-linear align-middle"
             />
             <a>
               <div
@@ -115,12 +114,11 @@
             style="background-position: 50%; cursor: pointer"
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
-            routerLink="/about"
-            fragment="goldschmiede"
+            routerLink="/leistungen/uhren"
           >
             <img
-              src="../../../../assets/juwelierbreuch/rolex.jpg"
-              class="w-full transition duration-300 ease-linear align-middle"
+              src="../../../../../assets/_assets/home/s1/Uhr1.png"
+              class="w-full h-full object-contain transition duration-300 ease-linear align-middle"
             />
             <a>
               <div
@@ -146,12 +144,11 @@
             style="background-position: 50%; cursor: pointer"
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
-            routerLink="/about"
-            fragment="goldschmiede"
+            routerLink="/leistungen/schmuck"
           >
             <img
-              src="../../../../assets/juwelierbreuch/Halskette.jpg"
-              class="w-full transition duration-300 ease-linear align-middle"
+              src="../../../../../assets/_assets/home/s1/Halskette.jpg"
+              class="w-full h-full object-contain transition duration-300 ease-linear align-middle"
             />
             <a>
               <div
@@ -177,9 +174,10 @@
     </div>
     <div class="mx-auto mt-12 max-w-screen-xl flex items-center justify-center">
       <button
+        [routerLink]="['/kontakt']"
         class="px-6 py-3 inline-block rounded border-2 border-[var(--accent-X)] text-[var(--textcolor)] hover:border-[var(--accent)] hover:bg-[var(--accent-X)] transition duration-300 ease-in-out"
       >
-        Zu unseren Leistungen!
+        Kontaktieren Sie uns!
       </button>
     </div>
   </section>
