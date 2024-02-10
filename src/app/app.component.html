@@ -44,6 +44,7 @@
       <mat-divider></mat-divider>
       <li>
         <mat-expansion-panel
+        #leistungenPanel
           hideToggle
           (opened)="panelOpenStateLeistungen = true"
           (closed)="panelOpenStateLeistungen = false"
@@ -69,6 +70,7 @@
           </mat-expansion-panel-header>
           <p
             [routerLink]="['/leistungen/trauringe']"
+            routerLinkActive="routeIsActive"
             (click)="drawer.close()"
             class="mb-4 mt-1 px-3"
           >
@@ -76,6 +78,7 @@
           </p>
           <p
             [routerLink]="['/leistungen/uhren']"
+            routerLinkActive="routeIsActive"
             (click)="drawer.close()"
             class="mb-4 px-3"
           >
@@ -83,6 +86,7 @@
           </p>
           <p
             [routerLink]="['/leistungen/schmuck']"
+            routerLinkActive="routeIsActive"
             (click)="drawer.close()"
             class="mb-4 px-3"
           >
@@ -93,6 +97,7 @@
       <mat-divider></mat-divider>
       <li>
         <mat-expansion-panel
+        #ueberunsPanel
           hideToggle
           (opened)="panelOpenStateUeberuns = true"
           (closed)="panelOpenStateUeberuns = false"
@@ -118,13 +123,15 @@
           </mat-expansion-panel-header>
           <p
             [routerLink]="['/ueberuns/uhrmachermeister']"
+            routerLinkActive="routeIsActive"
             (click)="drawer.close()"
             class="mb-4 mt-1 px-3"
           >
             Uhrmachermeister
           </p>
           <p
-            [routerLink]="['/ueberuns/goldschmiede']"
+            [routerLink]="['/ueberuns/goldschmied']"
+            routerLinkActive="routeIsActive"
             (click)="drawer.close()"
             class="mb-4 px-3"
           >
@@ -132,6 +139,7 @@
           </p>
           <p
             [routerLink]="['/ueberuns/familienbetrieb']"
+            routerLinkActive="routeIsActive"
             (click)="drawer.close()"
             class="mb-4 px-3"
           >
@@ -166,7 +174,11 @@
     <div
       class="w-[100%] flex flex-row justify-between mx-auto max-w-screen-xl px-6 py-3"
     >
-      <div class="cursor-pointer" [routerLink]="['/start']">
+      <div
+        class="cursor-pointer"
+        [routerLink]="['/start']"
+        routerLinkActive="routeIsActive"
+      >
         <img
           style="height: 70px"
           src="../assets/Logo neu.png"
@@ -176,7 +188,12 @@
 
       <ul class="toolbar-ul gap-x-12 flex flex-row items-center justify-center">
         <li>
-          <a [routerLink]="['/start']" class="block rounded">Start</a>
+          <a
+            [routerLink]="['/start']"
+            routerLinkActive="routeIsActive"
+            class="block rounded"
+            >Start</a
+          >
         </li>
 
         <li>
@@ -199,13 +216,25 @@
           </button>
 
           <mat-menu #menuLeistungen="matMenu">
-            <button [routerLink]="['/leistungen/trauringe']" mat-menu-item>
+            <button
+              [routerLink]="['/leistungen/trauringe']"
+              routerLinkActive="routeIsActive"
+              mat-menu-item
+            >
               Trauringe
             </button>
-            <button [routerLink]="['/leistungen/uhren']" mat-menu-item>
+            <button
+              [routerLink]="['/leistungen/uhren']"
+              routerLinkActive="routeIsActive"
+              mat-menu-item
+            >
               Uhren
             </button>
-            <button [routerLink]="['/leistungen/schmuck']" mat-menu-item>
+            <button
+              [routerLink]="['/leistungen/schmuck']"
+              routerLinkActive="routeIsActive"
+              mat-menu-item
+            >
               Schmuck
             </button>
           </mat-menu>
@@ -231,20 +260,37 @@
           </button>
 
           <mat-menu #menuUeberuns="matMenu">
-            <button mat-menu-item [routerLink]="['/ueberuns/uhrmachermeister']">
+            <button
+              mat-menu-item
+              [routerLink]="['/ueberuns/uhrmachermeister']"
+              routerLinkActive="routeIsActive"
+            >
               Uhrmachermeister
             </button>
-            <button mat-menu-item [routerLink]="['/ueberuns/goldschmied']">
+            <button
+              mat-menu-item
+              [routerLink]="['/ueberuns/goldschmied']"
+              routerLinkActive="routeIsActive"
+            >
               Goldschmiede
             </button>
-            <button mat-menu-item [routerLink]="['/ueberuns/familienbetrieb']">
+            <button
+              mat-menu-item
+              [routerLink]="['/ueberuns/familienbetrieb']"
+              routerLinkActive="routeIsActive"
+            >
               Familienbetrieb
             </button>
           </mat-menu>
         </li>
 
         <li>
-          <a [routerLink]="['/start']" class="block rounded">Kontakt</a>
+          <a
+            [routerLink]="['/kontakt']"
+            routerLinkActive="routeIsActive"
+            class="block rounded"
+            >Kontakt</a
+          >
         </li>
       </ul>
     </div>
@@ -256,7 +302,11 @@
     class="fixed flex justify-between items-center md:hidden w-[100%] h-[90px] px-6"
     style="z-index: 100"
   >
-    <div class="cursor-pointer" [routerLink]="['/start']">
+    <div
+      class="cursor-pointer"
+      [routerLink]="['/start']"
+      routerLinkActive="routeIsActive"
+    >
       <img
         style="height: 70px"
         src="../assets/Logo neu.png"
@@ -278,7 +328,9 @@
   </div>
 
   <div #routerOutlet id="routerOutlet" class="router-outlet">
-    <router-outlet></router-outlet>
+    <router-outlet
+      (activate)="ueberunsPanel.close();leistungenPanel.close()"
+    ></router-outlet>
   </div>
 
   <footer
@@ -288,7 +340,11 @@
     <div class="notranslate mx-auto flex flex-col text-center items-center">
       <span class="text-sm">
         <!-- clickscroll -->
-        <p [routerLink]="['/start']" class="hover:underline mb-3">
+        <p
+          [routerLink]="['/start']"
+          routerLinkActive="routeIsActive"
+          class="hover:underline mb-3"
+        >
           Webtree-Design
         </p>
       </span>
@@ -296,13 +352,19 @@
         class="container mx-auto flex flex-col md:flex-row text-center items-center gap-2 md:gap-6"
       >
         <li>
-          <a routerLink="/impressum" class="text-sm hover:underline"
+          <a
+            routerLink="/impressum"
+            routerLinkActive="routeIsActive"
+            class="text-sm hover:underline"
             >Impressum</a
           >
         </li>
 
         <li>
-          <a routerLink="/datenschutz" class="text-sm hover:underline"
+          <a
+            routerLink="/datenschutz"
+            routerLinkActive="routeIsActive"
+            class="text-sm hover:underline"
             >Datenschutzerklärung
           </a>
         </li>

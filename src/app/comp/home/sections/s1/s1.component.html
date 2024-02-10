@@ -18,7 +18,7 @@
     >
       <div class="flex flex-col h-[50vh] max-w-screen-xl mx-auto">
         <div class="flex justify-center lg:justify-end items-center flex-grow">
-          <div class="rounded-sm text-center py-6 lg:mr-3">
+          <div class="rounded-sm text-center p-6 lg:mr-3">
             <h1
               class="text-4xl mb-2 font-bold"
               style="color: var(--background) !important"
@@ -85,6 +85,7 @@
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
             routerLink="/leistungen/trauringe"
+            routerLinkActive="routeIsActive"
           >
             <img
               src="../../../../../assets/_assets/home/s1/2singe auf teppich.png"
@@ -115,6 +116,7 @@
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
             routerLink="/leistungen/uhren"
+            routerLinkActive="routeIsActive"
           >
             <img
               src="../../../../../assets/_assets/home/s1/Uhr1.png"
@@ -145,6 +147,7 @@
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
             routerLink="/leistungen/schmuck"
+            routerLinkActive="routeIsActive"
           >
             <img
               src="../../../../../assets/_assets/home/s1/Halskette.jpg"
@@ -175,6 +178,7 @@
     <div class="mx-auto mt-12 max-w-screen-xl flex items-center justify-center">
       <button
         [routerLink]="['/kontakt']"
+        routerLinkActive="routeIsActive"
         class="px-6 py-3 inline-block rounded border-2 border-[var(--accent-X)] text-[var(--textcolor)] hover:border-[var(--accent)] hover:bg-[var(--accent-X)] transition duration-300 ease-in-out"
       >
         Kontaktieren Sie uns!
