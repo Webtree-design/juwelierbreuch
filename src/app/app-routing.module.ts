@@ -8,6 +8,7 @@ import { SchmuckComponent } from './comp/leistungen/schmuck/schmuck.component';
 import { UhrmacherComponent } from './comp/ueberuns/uhrmacher/uhrmacher.component';
 import { SchmiedComponent } from './comp/ueberuns/schmied/schmied.component';
 import { FamilienbetriebComponent } from './comp/ueberuns/familienbetrieb/familienbetrieb.component';
+import { KontaktComponent } from './comp/kontakt/kontakt.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'ueberuns/familienbetrieb',
     component: FamilienbetriebComponent,
+  },
+  {
+    path: 'kontakt',
+    component: KontaktComponent,
   },
 ];
 

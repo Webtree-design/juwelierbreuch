@@ -34,6 +34,7 @@ import { SchmuckComponent } from './comp/leistungen/schmuck/schmuck.component';
 import { UhrmacherComponent } from './comp/ueberuns/uhrmacher/uhrmacher.component';
 import { SchmiedComponent } from './comp/ueberuns/schmied/schmied.component';
 import { FamilienbetriebComponent } from './comp/ueberuns/familienbetrieb/familienbetrieb.component';
+import { KontaktComponent } from './comp/kontakt/kontakt.component';
 register();
 
 @NgModule({
@@ -49,6 +50,7 @@ register();
     UhrmacherComponent,
     SchmiedComponent,
     FamilienbetriebComponent,
+    KontaktComponent,
   ],
   imports: [
     BrowserModule, //.withServerTransition({ appId: 'serverApp' }),
